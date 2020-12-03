@@ -1,4 +1,4 @@
-arr = File.readlines('./Test_Data/3.txt').map { |x| x.gsub(/\n/, '') }
+arr = File.readlines('./Test_Data/3.txt', chomp: true)
 
 def count_trees(map, right, down)
   counter = 0

@@ -1,4 +1,4 @@
-arr = File.readlines('../Test_Data/2.txt').map { |x| x.gsub(/\n/, '') }
+arr = File.readlines('../Test_Data/2.txt', chomp: true)
 
 i = 0
 

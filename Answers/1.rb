@@ -8,7 +8,7 @@ def find_combo(arr, combo)
   end
 end
 
-arr = File.readlines('../Test_Data/1.txt').map { |x| x.gsub('\n', '').to_i }
+arr = File.readlines('../Test_Data/1.txt', chomp: true).map(&:to_i)
 
 find_combo(arr, 3)
 

@@ -25,8 +25,6 @@ arr.each do |seat|
   plane_rows = (0..127).to_a
   plane_columns = (0..7).to_a
 
-  # row = /^(.){7}/.match(seat)[0]
-  # column = /(.){3}$/.match(seat)[0]
   while seat.length > 0
     char = seat.slice!(0, 1).to_sym
 

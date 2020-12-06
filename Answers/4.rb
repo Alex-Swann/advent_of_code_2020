@@ -1,8 +1,4 @@
-arr = File.readlines('./Test_Data/4.txt', chomp: true)
-
-formatted = ['']
-i = 0
-num = 0
+arr, num = File.readlines('./Test_Data/4.txt', chomp: true).map(&:strip).join(" ").split("  "), 0
 
 def check_range(start, finish, value)
   (start..finish).to_a.include? value.to_i
@@ -40,7 +36,7 @@ def validate(type, value)
   when :hgt
     measurement = value.slice(-2, 2).to_sym
     value_m = value.slice(0, value.length - 2)
-    VALID[type][measurement] ? VALID[type][measurement].call(value_m) : false
+    VALID[type][measurement] && VALID[type][measurement].call(value_m)
   else
     VALID[type].call(value)
   end
@@ -56,16 +52,7 @@ def passes_validations(fields)
   end
 end
 
-arr.each do |line|
-  if line.empty?
-    i += 1
-    formatted[i] = ''
-  else
-    formatted[i] << "#{line} "
-  end
-end
-
-formatted.each do |str|
+arr.each do |str|
   if VALID.keys.map(&:to_s).all? { |code| str.include? code }
     fields = str.split()
     num += 1 if passes_validations(fields)

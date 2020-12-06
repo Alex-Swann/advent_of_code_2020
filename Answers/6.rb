@@ -1,4 +1,4 @@
-arr, total = File.readlines('./Test_Data/6.txt', chomp: true).map(&:strip).join(" ").split("  "), 0
+arr, total = File.readlines('./Test_Data/6.txt').map(&:strip).join(' ').split('  '), 0
 
 arr.each do |group|
   group = group.split.map { |answer| answer.chars }

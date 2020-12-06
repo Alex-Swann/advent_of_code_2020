@@ -1,4 +1,4 @@
-arr, num = File.readlines('./Test_Data/4.txt', chomp: true).map(&:strip).join(" ").split("  "), 0
+arr, num = File.readlines('./Test_Data/4.txt').map(&:strip).join(' ').split('  '), 0
 
 def check_range(start, finish, value)
   (start..finish).to_a.include? value.to_i

@@ -18,9 +18,6 @@ arr.each_with_index do |line, index|
   end
 end
 
-values = ''
-36.times { values << '0' }
-
 memory_values = []
 
 mask_mems.each do |mask_mems_obj|
